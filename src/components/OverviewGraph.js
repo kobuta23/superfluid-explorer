@@ -74,11 +74,12 @@ const OverviewGraph = props => {
       linkRotation={l => l.rotation}
       // linkWidth                         = { l => Math.log(1+l.flowRate) }
       linkColor={l => {
-        if (l.flowRate == "0") return "#111";
+        if (typeof l.flowRate == "undefined") return "#111";
         if (typeof tokens[currencies[props.network][l.token]] == "undefined") {
           return "#ff0000";
-        }
-        return tokens[currencies[props.network][l.token]].color;
+        } else if (l.flowRate == "0") {
+          return tokens[currencies[props.network][l.token]].color + "11";
+        } else return tokens[currencies[props.network][l.token]].color;
       }}
       linkLabel={l =>
         ((l.flowRate * 3600 * 24 * 30) / 1e18).toFixed(2) +

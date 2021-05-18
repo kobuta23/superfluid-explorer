@@ -16,7 +16,7 @@ const Overview = props => {
       skip
     }
   });
-  const fetchMoreAccounts = () => {
+  const fetchMoreAccounts = async () => {
     fetchMore({
       variables: { skip: data.accounts.length },
       updateQuery: (previousResult, { fetchMoreResult, queryVariables }) => {
@@ -27,38 +27,8 @@ const Overview = props => {
       }
     });
   };
-  const fetchMoreFlows = () => {
-    do {
-      var manyFlowAccount = data.accounts.find(
-        o => o.flowsOwned.length > 0 && o.flowsOwned.length % 1000 === 0
-      );
-      console.log("THE OBJECT FOUND IS:");
-      console.log(manyFlowAccount);
-      // fetchMore({
-      //   variables: { skip: data.accounts.length },
-      //   updateQuery: (previousResult, { fetchMoreResult, queryVariables }) => {
-      //     return {
-      //       ...previousResult,
-      //       accounts: [...previousResult.accounts, ...fetchMoreResult.accounts]
-      //     };
-      //   }
-      // });
-      var p = false;
-      // p =
-      //   typeof data.accounts.find(
-      //     o => o.flowsOwned.length > 0 && o.flowsOwned.length % 1000 === 0
-      //   ) !== "undefined";
-    } while (p === true);
-  };
   if (data && data.hasOwnProperty("accounts")) {
     if (data.accounts.length % 1000 === 0) fetchMoreAccounts();
-    else if (
-      typeof data.accounts.find(
-        o => o.flowsOwned.length > 0 && o.flowsOwned.length % 1000 === 0
-      ) !== "undefined"
-    ) {
-      fetchMoreFlows();
-    }
   }
 
   console.log(data);
@@ -104,15 +74,15 @@ const Overview = props => {
   // Format data - links
   const links = [].concat(
     ...data.accounts.map(account =>
-      account.flowsOwned.map(flow => {
+      account.flowsReceived.map(flow => {
         var { source, target, token } = splitID(flow.id);
         var { color, curvature, rotation } = (() => {
           if (typeof tokens[currencies[props.network][token]] == "undefined") {
             return { color: "#000", curvature: 0, rotation: 0 };
           } else return tokens[currencies[props.network][token]];
         })();
-        if (!nodes.some(e => e.id === target)) {
-          nodes.push({ id: target, color: "#ff0000" });
+        if (!nodes.some(e => e.id === source)) {
+          nodes.push({ id: source, color: "#ff0000" });
         }
         return {
           source,

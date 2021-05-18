@@ -1,9 +1,6 @@
 import gql from "graphql-tag";
 
-export default gql`
-  query nodes($address: String) {
-    accounts(where: { id: $address }) {
-      flowsOwned(first: 1000) {
+/*      flowsOwned(first: 1000) {
         id
         sum
         flowRate
@@ -12,7 +9,11 @@ export default gql`
         owner
         recipient
         events
-      }
+      }*/
+
+export default gql`
+  query nodes($address: String) {
+    accounts(where: { id: $address }) {
       flowsReceived(first: 1000) {
         id
         sum

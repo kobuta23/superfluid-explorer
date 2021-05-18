@@ -10,6 +10,7 @@ export default gql`
       }
       flowsReceived {
         id
+        flowRate
       }
     }
   }

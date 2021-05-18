@@ -7,6 +7,8 @@ currencies.matic["0x1305F6B6Df9Dc47159D12Eb7aC2804d4A33173c2".toLowerCase()] =
   "DAIx";
 currencies.matic["0xCAa7349CEA390F89641fe306D93591f87595dc1F".toLowerCase()] =
   "USDCx";
+currencies.matic["0xe1cA10e6a10c0F72B74dF6b7339912BaBfB1f8B5".toLowerCase()] =
+  "QIx";
 
 currencies.xdai["0x59988e47A3503AaFaA0368b9deF095c818Fdca01".toLowerCase()] =
   "xDAIx";
@@ -64,5 +66,10 @@ export const tokens = {
     curvature: Math.floor(Math.random() * 10) / 10,
     rotation: Math.PI / Math.floor(Math.random() * 10) / 10,
     color: "#44ff44"
+  },
+  QIx: {
+    curvature: Math.floor(Math.random() * 10) / 10,
+    rotation: Math.PI / Math.floor(Math.random() * 10) / 10,
+    color: "#00ff44"
   }
 };
