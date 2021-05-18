@@ -1,18 +1,16 @@
-import React from 'react';
-import '../css/Loading.css';
+import React from "react";
+import "../css/Loading.css";
 
-import rDaiLogo from '../assets/rDai.svg';
+import sfLogo from "../assets/sf-logo.svg";
 
-class Loading extends React.Component
-{
-	render()
-	{
-		return (
-			<div id='Loading'>
-				<img src={rDaiLogo} alt='logo'/>
-			</div>
-		);
-	}
+class Loading extends React.Component {
+  render() {
+    return (
+      <div id="Loading">
+        <img src={sfLogo} alt="logo" />
+      </div>
+    );
+  }
 }
 
 export default Loading;

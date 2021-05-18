@@ -1,32 +1,16 @@
-import gql from 'graphql-tag';
+import gql from "graphql-tag";
 
 export default gql`
-query
-{
-	accounts(first: 1000, where: { id_not: "0x0000000000000000000000000000000000000000"})
-	{
-		id
-		balance
-		hat
-		{
-			id
-		}
-		loansOwned(where: { amount_gt: 0 })
-		{
-			id
-			amount
-			recipient {
-				id
-			}
-		}
-		loansReceived(where: { amount_gt: 0 })
-		{
-			id
-			amount
-			owner {
-				id
-			}
-		}
-	}
-}
-`
+  query nodes($skip: Int, $skip2: Int) {
+    accounts(first: 1000, skip: $skip) {
+      id
+      flowsOwned(first: 1000, skip: $skip2) {
+        id
+        flowRate
+      }
+      flowsReceived {
+        id
+      }
+    }
+  }
+`;

@@ -1,13 +1,10 @@
 {
-	"networks":
-	{
-		"rDai":
-		{
-			"endpoint": "https://api.thegraph.com/subgraphs/name/amxx/rdai"
-		},
-		"rSai":
-		{
-			"endpoint": "https://api.thegraph.com/subgraphs/name/amxx/rsai"
-		}
-	}
+  "networks": {
+    "xdai": {
+      "endpoint": "https://api.thegraph.com/subgraphs/name/superfluid-finance/superfluid-xdai"
+    },
+    "matic": {
+      "endpoint": "https://api.thegraph.com/subgraphs/name/superfluid-finance/superfluid-matic"
+    }
+  }
 }

@@ -1,44 +1,42 @@
-import gql from 'graphql-tag';
+import gql from "graphql-tag";
 
 export default gql`
-query node($address: String)
-{
-	account(id: $address)
-	{
-		id
-		balance
-		loansOwned(where: { amount_gt: 0 })
-		{
-			amount
-			owner
-			{
-				id
-			}
-			recipient
-			{
-				id
-			}
-			hat
-			{
-				id
-			}
-		}
-		loansReceived(where: { amount_gt: 0 })
-		{
-			amount
-			owner
-			{
-				id
-			}
-			recipient
-			{
-				id
-			}
-			hat
-			{
-				id
-			}
-		}
-	}
-}
-`
+  query nodes($address: String) {
+    accounts(where: { id: $address }) {
+      flowsOwned(first: 1000) {
+        id
+        sum
+        flowRate
+        lastUpdate
+        token
+        owner
+        recipient
+        events
+      }
+      flowsReceived(first: 1000) {
+        id
+        sum
+        flowRate
+        lastUpdate
+        token
+        owner
+        recipient
+        events
+      }
+      upgradeEvents {
+        id
+        account
+        transaction
+        token
+        amount
+      }
+      downgradeEvents {
+        id
+        account
+        transaction
+        token
+        amount
+      }
+    }
+  }
+`;
