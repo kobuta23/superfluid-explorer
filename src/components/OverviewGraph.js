@@ -83,8 +83,10 @@ const OverviewGraph = props => {
       }}
       linkLabel={l =>
         ((l.flowRate * 3600 * 24 * 30) / 1e18).toFixed(2) +
-          "/mo of " +
-          currencies[props.network][l.token] || l.token
+        "/mo of " +
+        (typeof currencies[props.network][l.token] === "undefined"
+          ? l.token
+          : currencies[props.network][l.token])
       }
       linkOpacity={1}
       linkDirectionalParticles={l => (l.flowRate == "0" ? 0 : 2)}

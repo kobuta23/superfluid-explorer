@@ -9,6 +9,10 @@ currencies.matic["0xCAa7349CEA390F89641fe306D93591f87595dc1F".toLowerCase()] =
   "USDCx";
 currencies.matic["0xe1cA10e6a10c0F72B74dF6b7339912BaBfB1f8B5".toLowerCase()] =
   "QIx";
+currencies.matic["0xc49c15350f001efEe91E154F03BdDF38CFD0d96e".toLowerCase()] =
+  "ACDCx";
+currencies.matic["0x84B2e92E08008c0081C8c21a35FdA4DdC5d21aC6".toLowerCase()] =
+  "sSDT";
 
 currencies.xdai["0x59988e47A3503AaFaA0368b9deF095c818Fdca01".toLowerCase()] =
   "xDAIx";
@@ -67,9 +71,19 @@ export const tokens = {
     rotation: Math.PI / Math.floor(Math.random() * 10) / 10,
     color: "#44ff44"
   },
+  ACDCx: {
+    curvature: Math.floor(Math.random() * 10) / 10,
+    rotation: Math.PI / Math.floor(Math.random() * 10) / 10,
+    color: "#84ff84"
+  },
   QIx: {
     curvature: Math.floor(Math.random() * 10) / 10,
     rotation: Math.PI / Math.floor(Math.random() * 10) / 10,
     color: "#00ff44"
+  },
+  sSDT: {
+    curvature: Math.floor(Math.random() * 10) / 10,
+    rotation: Math.PI / Math.floor(Math.random() * 10) / 10,
+    color: "#888888"
   }
 };
