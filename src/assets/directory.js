@@ -13,6 +13,12 @@ currencies.matic["0xc49c15350f001efEe91E154F03BdDF38CFD0d96e".toLowerCase()] =
   "ACDCx";
 currencies.matic["0x84B2e92E08008c0081C8c21a35FdA4DdC5d21aC6".toLowerCase()] =
   "sSDT";
+currencies.matic["0x1adca32b906883e474aebcba5708b41f3645f941".toLowerCase()] =
+  "MOCAx";
+currencies.matic["0x61a7b6f0a7737d9bd38fdeaf1d4160e16bf23043".toLowerCase()] =
+  "WORKx";
+currencies.matic["0x4086ebf75233e8492f1bcda41c7f2a8288c2fb92".toLowerCase()] =
+  "WBTCx";
 
 currencies.xdai["0x59988e47A3503AaFaA0368b9deF095c818Fdca01".toLowerCase()] =
   "xDAIx";
@@ -66,6 +72,11 @@ export const tokens = {
     rotation: Math.PI / Math.floor(Math.random() * 10) / 10,
     color: "#00ff00"
   },
+  WORKx: {
+    curvature: Math.floor(Math.random() * 10) / 10,
+    rotation: Math.PI / Math.floor(Math.random() * 10) / 10,
+    color: "#00dd00"
+  },
   ACx: {
     curvature: Math.floor(Math.random() * 10) / 10,
     rotation: Math.PI / Math.floor(Math.random() * 10) / 10,
@@ -85,5 +96,15 @@ export const tokens = {
     curvature: Math.floor(Math.random() * 10) / 10,
     rotation: Math.PI / Math.floor(Math.random() * 10) / 10,
     color: "#888888"
+  },
+  MOCAx: {
+    curvature: Math.floor(Math.random() * 10) / 10,
+    rotation: Math.PI / Math.floor(Math.random() * 10) / 10,
+    color: "#BEA493"
+  },
+  WBTCx: {
+    curvature: Math.floor(Math.random() * 10) / 10,
+    rotation: Math.PI / Math.floor(Math.random() * 10) / 10,
+    color: "#f2a900"
   }
 };
