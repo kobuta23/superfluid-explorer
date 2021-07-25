@@ -1,3 +1,10 @@
+export const explorers = 
+      {
+          matic: "https://polygonscan.com", 
+          xdai: "https://blockscout.com/poa/xdai"
+      }; 
+
+
 export const currencies = { matic: {}, xdai: {} };
 currencies.matic["0x27e1e4e6bc79d93032abef01025811b7e4727e85".toLowerCase()] =
   "ETHx";

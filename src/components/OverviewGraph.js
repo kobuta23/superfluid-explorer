@@ -1,6 +1,6 @@
 import React from "react";
 import { ForceGraph3D } from "react-force-graph";
-import { currencies, tokens } from "../assets/directory";
+import { currencies, tokens, explorers } from "../assets/directory";
 
 const OverviewGraph = props => {
   const fgRef = React.useRef();
@@ -56,7 +56,9 @@ const OverviewGraph = props => {
   );
 
   const handleRightClick = React.useCallback(node => {
-    window.location.href = `https://etherscan.io/address/${node.id}`;
+    const url = explorers[props.network] + "/address/" + node.id;
+    console.log(url);
+    window.open(url);
   }, []);
 
   return (
